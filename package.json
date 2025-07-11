@@ -1,0 +1,37 @@
+{
+  "name": "famtask",
+  "version": "1.0.0",
+  "description": "FamTask is a modern and collaborative web app designed for families to manage daily house tasks and shared shopping lists in one place. It simplifies communication, increases responsibility, and provides a smooth experience for users of all ages.",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "build": "npm run build --workspaces",
+    "preview": "npm run preview --workspace=client",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "postinstall": "npm install --workspace=client && npm install --workspace=server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ialirezaesrafili/FamTask.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ialirezaesrafili/FamTask/issues"
+  },
+  "homepage": "https://github.com/ialirezaesrafili/FamTask#readme",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.5"
+  }
+}
