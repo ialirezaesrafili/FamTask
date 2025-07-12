@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import http from "http";
 import cors from "cors";
-
+import authRouter from "../src/routes/auth.route";
 export class Application {
     /* --- PRIVATE VARIABLE */
     #app = express();
@@ -45,6 +45,8 @@ export class Application {
                 timestamp: new Date().toISOString()
             });
         });
+
+        this.#app.use('/api/auth', authRouter)
     }
 
     /**
